@@ -8,6 +8,14 @@ $d = $_POST['date'];
 $c = $_POST['city'];
 $m = $_POST['mono'];
 
+if(isset($_POST['register']))
+{   
+    if(!preg_match("/^[0-9]*$/", $m))
+    {
+        echo "Only Numbers are allowed.";
+    }
+}
+
 $sql = "INSERT INTO DATA (fname, lname, dob, city, mobile_no) VALUES ('$f', '$l', '$d', '$c', '$m');";
 
 if(mysqli_query($conn, $sql))
@@ -20,7 +28,7 @@ else
 }
 
 echo <<<off
-    <form action="insertForm.html">
+    <form action="form_index.html">
         <p>Want to insert more?</p>
         <input type="submit" name="yes" value="YES"> &nbsp;
         <a href="./display_all.php">Show all data</a>        

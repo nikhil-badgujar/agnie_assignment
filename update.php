@@ -52,7 +52,7 @@ $mn = $_GET['mn'];
                         <input type="text" name="mono" value="<?php echo "$mn" ?>"><br><br>
                     </div>                    
                         <!--    <button type="submit" name="submit" class="btn btn-primary">Update</button>&nbsp; &nbsp;    -->
-                        <input type="submit" class="formbutton" id="button" name="submita" value="Update Details">
+                        <input type="submit" class="formbutton" id="button" name="update_details" value="Update Details">
                         <a href="./display_all.php">Show all data</a>
                 </form>
             </div>
@@ -64,7 +64,7 @@ $mn = $_GET['mn'];
 <?php 
 
 // To bind the data to DB
-if($_GET['submita'])
+if(isset($_GET['update_details']))
 {
     $id = $_GET['id'];    
     $fname = $_GET['fname'];
