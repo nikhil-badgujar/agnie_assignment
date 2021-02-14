@@ -6,13 +6,20 @@
     
      <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+     <link rel="stylesheet2" href="style.css">    
+    <style type=”text/css”>
+        td {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .7em;
+    border: 1px solid #DDD;
+        }
+    </style>
 </head>
 <body>
     
 <?php
 
-    include("common.php");
+    include("common.php");    
 
     $sql = "SELECT * FROM DATA";
 
@@ -50,7 +57,9 @@
                             <td>" .$row['city']. "</td>
                             <td>" .$row['mobile_no']. "</td>
                             <td><a href = 'update.php?id=$row[id]&fn=$row[fname]&ln=$row[lname]&db=$row[dob]&ct=$row[city]&mn=$row[mobile_no]'>Update</td>
-                            <td><a href = 'delete.php?id=$row[id]&fn=$row[fname]&ln=$row[lname]&db=$row[dob]&ct=$row[city]&mn=$row[mobile_no]'>Delete</td>
+                            <td><a href = 'delete.php?id=$row[id]&fn=$row[fname]&ln=$row[lname]&db=$row[dob]&ct=$row[city]&mn=$row[mobile_no]'>
+                                <span style='color:red'>Delete</span>
+                            </td>
                         </tr>
                         ";            
                     }
